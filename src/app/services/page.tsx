@@ -1,10 +1,165 @@
+import Link from "next/link";
+
 export default function Services() {
   return (
-    <main className="px-6 py-16 max-w-4xl mx-auto text-center">
-      <h1 className="text-3xl font-bold text-[#1A3A6C]">Услуги</h1>
-      <p className="mt-4 text-gray-700">
-        Здесь будет подробный список услуг: печати и штампы, полиграфия, наружная реклама, таблички и сувенирная продукция.
-      </p>
+    <main className="bg-gray-50">
+      {/* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */}
+      <section className="bg-[#1A3A6C] text-white px-6 py-16 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold text-[#D4AF37]">
+          Наши услуги
+        </h1>
+        <p className="mt-4 text-gray-200 max-w-2xl mx-auto">
+          Полный цикл — от печатей и визиток до наружной рекламы и сувенирной продукции.
+        </p>
+      </section>
+
+      {/* ===== УСЛУГА 1: ПЕЧАТИ И ШТАМПЫ (текст слева, иконка справа) ===== */}
+      <section className="px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
+            Печати и штампы
+          </h2>
+          <p className="mt-4 text-gray-700">
+            Изготавливаем печати и штампы для ИП, ООО и частных лиц на собственном
+            оборудовании. Подбираем оснастку под ваши задачи — от простого карманного
+            штампа до автоматической печати повышенной прочности.
+          </p>
+
+          <ul className="mt-6 space-y-2 text-gray-700">
+            <li>✔️ Печати организаций и ИП</li>
+            <li>✔️ Именные и должностные штампы</li>
+            <li>✔️ Факсимиле подписи</li>
+            <li>✔️ Готовность от 30 минут</li>
+          </ul>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Стоимость: от 150 до 750 ₽ в зависимости от типа оснастки.
+          </p>
+
+          <Link
+            href="/contacts"
+            className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+          >
+            Заказать
+          </Link>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
+          🖋️
+        </div>
+      </section>
+
+      {/* ===== УСЛУГА 2: ПОЛИГРАФИЯ (иконка слева, текст справа) ===== */}
+      <section className="bg-white px-6 py-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="order-2 md:order-1 bg-gray-50 rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
+            🖨️
+          </div>
+
+          <div className="order-1 md:order-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
+              Полиграфия
+            </h2>
+            <p className="mt-4 text-gray-700">
+              Печатаем визитки, буклеты, бланки и листовки любым тиражом.
+              Поможем с макетом, если его ещё нет, или подготовим к печати
+              ваш готовый дизайн.
+            </p>
+
+            <ul className="mt-6 space-y-2 text-gray-700">
+              <li>✔️ Визитки (одно- и двусторонние)</li>
+              <li>✔️ Буклеты и брошюры</li>
+              <li>✔️ Бланки строгой отчётности и документов</li>
+              <li>✔️ Листовки и флаеры</li>
+            </ul>
+
+            <p className="mt-4 text-sm text-gray-500">
+              Например, визитки (1000 шт) — от 800 до 1200 ₽.
+            </p>
+
+            <Link
+              href="/contacts"
+              className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Заказать
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== УСЛУГА 3: НАРУЖНАЯ РЕКЛАМА (текст слева, иконка справа) ===== */}
+      <section className="px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
+            Наружная реклама
+          </h2>
+          <p className="mt-4 text-gray-700">
+            Производим баннеры, таблички, вывески и информационные стенды —
+            для витрин, офисов, фасадов и выставочных мероприятий. Учитываем
+            погодостойкость материалов и особенности монтажа.
+          </p>
+
+          <ul className="mt-6 space-y-2 text-gray-700">
+            <li>✔️ Баннеры любых размеров</li>
+            <li>✔️ Таблички и вывески</li>
+            <li>✔️ Информационные и рекламные стенды</li>
+            <li>✔️ Помощь с монтажом</li>
+          </ul>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Баннеры — от 270 ₽/м², таблички — от 270 до 800 ₽.
+          </p>
+
+          <Link
+            href="/contacts"
+            className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+          >
+            Заказать
+          </Link>
+        </div>
+
+        <div className="bg-white rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
+          🪧
+        </div>
+      </section>
+
+      {/* ===== УСЛУГА 4: СУВЕНИРНАЯ ПРОДУКЦИЯ (иконка слева, текст справа) ===== */}
+      <section className="bg-white px-6 py-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="order-2 md:order-1 bg-gray-50 rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
+            🎁
+          </div>
+
+          <div className="order-1 md:order-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
+              Сувенирная продукция
+            </h2>
+            <p className="mt-4 text-gray-700">
+              Наносим логотип на кружки, брелоки, ручки и пакеты — отличный
+              вариант для подарков партнёрам, промо-акций и корпоративных
+              мероприятий.
+            </p>
+
+            <ul className="mt-6 space-y-2 text-gray-700">
+              <li>✔️ Кружки с логотипом</li>
+              <li>✔️ Брелоки</li>
+              <li>✔️ Ручки с фирменной символикой</li>
+              <li>✔️ Пакеты с печатью</li>
+            </ul>
+
+            <p className="mt-4 text-sm text-gray-500">
+              Кружки с логотипом — от 300 до 500 ₽.
+            </p>
+
+            <Link
+              href="/contacts"
+              className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Заказать
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
