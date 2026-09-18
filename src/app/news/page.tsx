@@ -1,6 +1,51 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
+type Post = {
+  id: string;
+  date: string;
+  text: string;
+  imageUrl: string | null;
+};
+
 export default function News() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    async function loadNews() {
+      try {
+        const response = await fetch("/api/news");
+        const data = await response.json();
+
+        if (data.success) {
+          setPosts(data.posts);
+        } else {
+          setError(true);
+        }
+      } catch {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadNews();
+  }, []);
+
+  function formatDate(dateString: string) {
+    return new Date(dateString).toLocaleString("ru-RU", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+
   return (
     <main className="bg-gray-50">
       {/* ===== HERO-СЕКЦИЯ ===== */}
@@ -13,30 +58,61 @@ export default function News() {
         </p>
       </section>
 
-      {/* ===== TELEGRAM-ВИДЖЕТ ===== */}
-      <section className="px-6 py-16 max-w-3xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
-          Наш Telegram-канал
-        </h2>
-        <p className="mt-3 text-gray-600">
-          Подпишитесь, чтобы первыми узнавать об акциях и новинках
-        </p>
+      {/* ===== СЕКЦИЯ С ПОСТАМИ ===== */}
+      {loading && (
+        <p className="text-center text-gray-500 py-16">Загрузка новостей…</p>
+      )}
 
-        <div className="mt-8 rounded-xl overflow-hidden shadow-md">
-          <iframe
-            src="https://t.me/s/shtamp_plus?embed=1&mode=tme"
-            width="100%"
-            height="600"
-            style={{ border: 0 }}
-            loading="lazy"
-            title="Telegram-канал Штамп Плюс"
-          />
+      {!loading && error && (
+        <p className="text-center text-red-600 py-16">
+          Не удалось загрузить новости. Попробуйте позже.
+        </p>
+      )}
+
+      {!loading && !error && posts.length === 0 && (
+        <p className="text-center text-gray-600 py-16 max-w-xl mx-auto px-6">
+          Пока новостей нет. Подпишитесь на наш Telegram-канал, чтобы не
+          пропустить обновления.
+        </p>
+      )}
+
+      {!loading && !error && posts.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto px-6 py-16">
+          {posts.map((post) => (
+            <div
+              key={post.id}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
+            >
+              {post.imageUrl && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={post.imageUrl}
+                  alt=""
+                  className="w-full h-48 object-cover"
+                />
+              )}
+
+              <div className="p-5">
+                <p className="text-xs text-gray-400 mb-2">
+                  {formatDate(post.date)}
+                </p>
+                <p className="text-gray-700 whitespace-pre-wrap">
+                  {post.text}
+                </p>
+
+                <a
+                  href={`https://t.me/shtamp_plus/${post.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 text-[#1A3A6C] font-semibold hover:text-[#D4AF37] transition text-sm"
+                >
+                  Читать в Telegram →
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
-
-        <p className="mt-3 text-xs text-gray-400">
-          Если виджет не отображается — откройте канал напрямую по ссылке ниже.
-        </p>
-      </section>
+      )}
 
       {/* ===== КНОПКИ ПОДПИСКИ ===== */}
       <section className="bg-white px-6 py-16">
@@ -68,50 +144,30 @@ export default function News() {
       </section>
 
       {/* ===== QR-КОДЫ ===== */}
-      <section className="px-6 py-16 max-w-4xl mx-auto text-center">
+      <section className="px-6 py-16 max-w-3xl mx-auto text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
           Или отсканируйте QR-код
         </h2>
 
-        <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-12">
-          {/* Telegram QR */}
-          <div className="flex flex-col items-center">
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <Image
-                src="/images/qr-telegram.png"
-                alt="QR-код Telegram-канала Штамп Плюс"
-                width={180}
-                height={180}
-              />
-            </div>
-            <a
-              href="https://t.me/shtamp_plus"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 text-[#1A3A6C] font-semibold hover:text-[#D4AF37] transition"
-            >
-              Мы в Telegram →
-            </a>
+        <div className="mt-8 flex flex-col sm:flex-row gap-8 justify-center items-center">
+          <div className="bg-white rounded-xl shadow-md p-6 inline-block">
+            <Image
+              src="/images/qr-telegram.png"
+              alt="QR-код Telegram-канала Штамп Плюс"
+              width={180}
+              height={180}
+            />
+            <p className="mt-3 text-sm text-gray-600">Мы в Telegram →</p>
           </div>
 
-          {/* VK QR */}
-          <div className="flex flex-col items-center">
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <Image
-                src="/images/qr-vk.png"
-                alt="QR-код группы ВКонтакте Штамп Плюс"
-                width={180}
-                height={180}
-              />
-            </div>
-            <a
-              href="https://vk.ru/im/channels/-241566676"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 text-[#1A3A6C] font-semibold hover:text-[#D4AF37] transition"
-            >
-              Мы во ВКонтакте →
-            </a>
+          <div className="bg-white rounded-xl shadow-md p-6 inline-block">
+            <Image
+              src="/images/qr-vk.png"
+              alt="QR-код ВКонтакте Штамп Плюс"
+              width={180}
+              height={180}
+            />
+            <p className="mt-3 text-sm text-gray-600">Мы в ВКонтакте →</p>
           </div>
         </div>
       </section>
