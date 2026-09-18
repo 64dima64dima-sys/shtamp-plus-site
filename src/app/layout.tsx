@@ -7,6 +7,9 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Штамп Плюс — Рекламное агентство в Саратове",
   description: "Печати, штампы, полиграфия, наружная реклама и сувенирная продукция в Саратове.",
+  icons: {
+    icon: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
