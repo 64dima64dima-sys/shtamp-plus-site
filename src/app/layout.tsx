@@ -5,10 +5,26 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rashtamp.ru"),
   title: "Штамп Плюс — Рекламное агентство в Саратове",
   description: "Печати, штампы, полиграфия, наружная реклама и сувенирная продукция в Саратове.",
   icons: {
     icon: "/images/logo.png",
+  },
+  openGraph: {
+    title: "Штамп Плюс — Рекламное агентство в Саратове",
+    description:
+      "Печати, штампы, полиграфия, наружная реклама и сувенирная продукция. Собственное производство в Саратове.",
+    url: "https://rashtamp.ru",
+    siteName: "Штамп Плюс",
+    locale: "ru_RU",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Штамп Плюс — Рекламное агентство в Саратове",
+    description:
+      "Печати, штампы, полиграфия, наружная реклама и сувенирная продукция. Собственное производство в Саратове.",
   },
 };
 
