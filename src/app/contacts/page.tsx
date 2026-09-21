@@ -83,7 +83,7 @@ export default function Contacts() {
 
             <div className="flex items-start gap-3">
               <span className="text-2xl">🕒</span>
-              <p>Пн–Пт: 8:00–17:00</p>
+              <p>Пн–Пт: 9:00–17:00</p>
             </div>
           </div>
         </div>
