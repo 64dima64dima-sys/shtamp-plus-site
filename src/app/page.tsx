@@ -33,7 +33,11 @@ export default function Home() {
         </h2>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          {/* Карточка 1 */}
+          <Link
+            href="/services#pechati-i-shtampy"
+            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+          >
             <div className="text-4xl">🖋️</div>
             <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
               Печати и штампы
@@ -41,9 +45,13 @@ export default function Home() {
             <p className="mt-2 text-sm text-gray-600">
               Изготовление печатей и штампов любой сложности в короткие сроки.
             </p>
-          </div>
+          </Link>
 
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          {/* Карточка 2 */}
+          <Link
+            href="/services#poligrafiya"
+            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+          >
             <div className="text-4xl">🖨️</div>
             <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
               Полиграфия
@@ -51,9 +59,13 @@ export default function Home() {
             <p className="mt-2 text-sm text-gray-600">
               Визитки, буклеты, бланки и другая печатная продукция для бизнеса.
             </p>
-          </div>
+          </Link>
 
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          {/* Карточка 3 */}
+          <Link
+            href="/services#naruzhnaya-reklama"
+            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+          >
             <div className="text-4xl">🪧</div>
             <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
               Наружная реклама
@@ -61,9 +73,13 @@ export default function Home() {
             <p className="mt-2 text-sm text-gray-600">
               Баннеры, таблички и вывески — заметно и качественно.
             </p>
-          </div>
+          </Link>
 
-          <div className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          {/* Карточка 4 */}
+          <Link
+            href="/services#suvenirnaya-produktsiya"
+            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+          >
             <div className="text-4xl">🎁</div>
             <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
               Сувенирная продукция
@@ -71,7 +87,7 @@ export default function Home() {
             <p className="mt-2 text-sm text-gray-600">
               Кружки, брелоки и другая продукция с вашим логотипом.
             </p>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -136,7 +152,7 @@ export default function Home() {
           г. Саратов, ул. имени Н.Г. Чернышевского, 100
         </p>
         <p className="mt-1 text-gray-700">
-          Телефон: +7 (845) 34-55-83s
+          Телефон: +7 (845) 34-55-83
         </p>
 
         <Link

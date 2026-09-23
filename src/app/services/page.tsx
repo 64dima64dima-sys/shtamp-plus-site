@@ -13,8 +13,11 @@ export default function Services() {
         </p>
       </section>
 
-      {/* ===== УСЛУГА 1: ПЕЧАТИ И ШТАМПЫ (текст слева, иконка справа) ===== */}
-      <section className="px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      {/* ===== УСЛУГА 1: ПЕЧАТИ И ШТАМПЫ ===== */}
+      <section
+        id="pechati-i-shtampy"
+        className="scroll-mt-24 px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
             Печати и штампы
@@ -49,8 +52,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ===== УСЛУГА 2: ПОЛИГРАФИЯ (иконка слева, текст справа) ===== */}
-      <section className="bg-white px-6 py-16">
+      {/* ===== УСЛУГА 2: ПОЛИГРАФИЯ ===== */}
+      <section id="poligrafiya" className="scroll-mt-24 bg-white px-6 py-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="order-2 md:order-1 bg-gray-50 rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
             🖨️
@@ -87,8 +90,11 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ===== УСЛУГА 3: НАРУЖНАЯ РЕКЛАМА (текст слева, иконка справа) ===== */}
-      <section className="px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      {/* ===== УСЛУГА 3: НАРУЖНАЯ РЕКЛАМА ===== */}
+      <section
+        id="naruzhnaya-reklama"
+        className="scroll-mt-24 px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
             Наружная реклама
@@ -123,8 +129,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ===== УСЛУГА 4: СУВЕНИРНАЯ ПРОДУКЦИЯ (иконка слева, текст справа) ===== */}
-      <section className="bg-white px-6 py-16">
+      {/* ===== УСЛУГА 4: СУВЕНИРНАЯ ПРОДУКЦИЯ ===== */}
+      <section id="suvenirnaya-produktsiya" className="scroll-mt-24 bg-white px-6 py-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="order-2 md:order-1 bg-gray-50 rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
             🎁
