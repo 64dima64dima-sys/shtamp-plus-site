@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -36,57 +37,113 @@ export default function Home() {
           {/* Карточка 1 */}
           <Link
             href="/services#pechati-i-shtampy"
-            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+            className="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
           >
-            <div className="text-4xl">🖋️</div>
-            <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
-              Печати и штампы
-            </h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Изготовление печатей и штампов любой сложности в короткие сроки.
-            </p>
+            <div className="relative h-40 w-full">
+              <Image
+                src="/images/home/shtampy.jpg"
+                alt="Печати и штампы"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+            </div>
+
+            <div className="flex gap-3 p-5">
+              <div className="text-2xl flex-shrink-0">🖋️</div>
+              <div>
+                <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                  Печати и штампы
+                </h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  Изготовление печатей и штампов любой сложности в короткие сроки.
+                </p>
+              </div>
+            </div>
           </Link>
 
           {/* Карточка 2 */}
           <Link
             href="/services#poligrafiya"
-            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+            className="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
           >
-            <div className="text-4xl">🖨️</div>
-            <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
-              Полиграфия
-            </h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Визитки, буклеты, бланки и другая печатная продукция для бизнеса.
-            </p>
+            <div className="relative h-40 w-full">
+              <Image
+                src="/images/home/poligrafiya.jpg"
+                alt="Полиграфия"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+            </div>
+
+            <div className="flex gap-3 p-5">
+              <div className="text-2xl flex-shrink-0">🖨️</div>
+              <div>
+                <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                  Полиграфия
+                </h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  Визитки, буклеты, бланки и другая печатная продукция для бизнеса.
+                </p>
+              </div>
+            </div>
           </Link>
 
           {/* Карточка 3 */}
           <Link
             href="/services#naruzhnaya-reklama"
-            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+            className="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
           >
-            <div className="text-4xl">🪧</div>
-            <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
-              Наружная реклама
-            </h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Баннеры, таблички и вывески — заметно и качественно.
-            </p>
+            <div className="relative h-40 w-full">
+              <Image
+                src="/images/home/naruzhka.jpg"
+                alt="Наружная реклама"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+            </div>
+
+            <div className="flex gap-3 p-5">
+              <div className="text-2xl flex-shrink-0">🪧</div>
+              <div>
+                <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                  Наружная реклама
+                </h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  Баннеры, таблички и вывески — заметно и качественно.
+                </p>
+              </div>
+            </div>
           </Link>
 
           {/* Карточка 4 */}
           <Link
             href="/services#suvenirnaya-produktsiya"
-            className="block bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition cursor-pointer"
+            className="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
           >
-            <div className="text-4xl">🎁</div>
-            <h3 className="mt-4 text-lg font-semibold text-[#1A3A6C]">
-              Сувенирная продукция
-            </h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Кружки, брелоки и другая продукция с вашим логотипом.
-            </p>
+            <div className="relative h-40 w-full">
+              <Image
+                src="/images/home/suvenirka.jpg"
+                alt="Сувенирная продукция"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+            </div>
+
+            <div className="flex gap-3 p-5">
+              <div className="text-2xl flex-shrink-0">🎁</div>
+              <div>
+                <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                  Сувенирная продукция
+                </h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  Кружки, брелоки и другая продукция с вашим логотипом.
+                </p>
+              </div>
+            </div>
           </Link>
         </div>
       </section>
