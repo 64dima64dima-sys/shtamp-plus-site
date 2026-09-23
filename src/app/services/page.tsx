@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Services() {
   return (
@@ -47,16 +48,28 @@ export default function Services() {
           </Link>
         </div>
 
-        <div className="bg-white rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
-          🖋️
+        <div className="relative w-full aspect-square rounded-xl shadow-md overflow-hidden bg-white">
+          <Image
+            src="/images/services/shtampy.jpg"
+            alt="Печати и штампы"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
       {/* ===== УСЛУГА 2: ПОЛИГРАФИЯ ===== */}
       <section id="poligrafiya" className="scroll-mt-24 bg-white px-6 py-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="order-2 md:order-1 bg-gray-50 rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
-            🖨️
+          <div className="order-2 md:order-1 relative w-full aspect-square rounded-xl shadow-md overflow-hidden bg-gray-50">
+            <Image
+              src="/images/services/poligrafiya.jpg"
+              alt="Полиграфия"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
 
           <div className="order-1 md:order-2">
@@ -124,16 +137,28 @@ export default function Services() {
           </Link>
         </div>
 
-        <div className="bg-white rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
-          🪧
+        <div className="relative w-full aspect-square rounded-xl shadow-md overflow-hidden bg-white">
+          <Image
+            src="/images/services/naruzhka.jpg"
+            alt="Наружная реклама"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
         </div>
       </section>
 
       {/* ===== УСЛУГА 4: СУВЕНИРНАЯ ПРОДУКЦИЯ ===== */}
       <section id="suvenirnaya-produktsiya" className="scroll-mt-24 bg-white px-6 py-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="order-2 md:order-1 bg-gray-50 rounded-xl shadow-md p-12 flex items-center justify-center text-8xl">
-            🎁
+          <div className="order-2 md:order-1 relative w-full aspect-square rounded-xl shadow-md overflow-hidden bg-gray-50">
+            <Image
+              src="/images/services/suvenirka.jpg"
+              alt="Сувенирная продукция"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
 
           <div className="order-1 md:order-2">
