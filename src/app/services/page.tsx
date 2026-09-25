@@ -40,12 +40,20 @@ export default function Services() {
             Стоимость: от 150 до 750 ₽ в зависимости от типа оснастки.
           </p>
 
-          <Link
-            href="/contacts"
-            className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
-          >
-            Заказать
-          </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/contacts"
+              className="inline-block px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Заказать
+            </Link>
+            <Link
+              href="/cases#pechati-i-shtampy"
+              className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
+            >
+              Показать кейсы →
+            </Link>
+          </div>
         </div>
 
         <div className="relative w-full aspect-square rounded-xl shadow-md overflow-hidden bg-white">
@@ -93,12 +101,20 @@ export default function Services() {
               Например, визитки (1000 шт) — от 800 до 1200 ₽.
             </p>
 
-            <Link
-              href="/contacts"
-              className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
-            >
-              Заказать
-            </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/contacts"
+                className="inline-block px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+              >
+                Заказать
+              </Link>
+              <Link
+                href="/cases#poligrafiya"
+                className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
+              >
+                Показать кейсы →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -129,12 +145,20 @@ export default function Services() {
             Баннеры — от 270 ₽/м², таблички — от 270 до 800 ₽.
           </p>
 
-          <Link
-            href="/contacts"
-            className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
-          >
-            Заказать
-          </Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/contacts"
+              className="inline-block px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Заказать
+            </Link>
+            <Link
+              href="/cases#naruzhnaya-reklama"
+              className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
+            >
+              Показать кейсы →
+            </Link>
+          </div>
         </div>
 
         <div className="relative w-full aspect-square rounded-xl shadow-md overflow-hidden bg-white">
@@ -182,12 +206,20 @@ export default function Services() {
               Кружки с логотипом — от 300 до 500 ₽.
             </p>
 
-            <Link
-              href="/contacts"
-              className="inline-block mt-6 px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
-            >
-              Заказать
-            </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/contacts"
+                className="inline-block px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+              >
+                Заказать
+              </Link>
+              <Link
+                href="/cases#suvenirnaya-produktsiya"
+                className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
+              >
+                Показать кейсы →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
