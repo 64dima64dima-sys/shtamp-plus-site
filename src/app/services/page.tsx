@@ -223,6 +223,75 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* ===== УСЛУГА 5: IT-УСЛУГИ ДЛЯ БИЗНЕСА ===== */}
+      <section
+        id="it-uslugi"
+        className="scroll-mt-24 px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
+        <div>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
+            IT-услуги для бизнеса
+          </h2>
+          <p className="mt-4 text-gray-700">
+            Создаём сайты, продвигаем их в поиске и разрабатываем ботов для
+            автоматизации бизнеса. Полный цикл — от идеи до готового решения.
+          </p>
+
+          <ul className="mt-6 space-y-3 text-gray-700">
+            <li className="flex items-center gap-2">
+              <span>🌐</span>
+              <span>Создание сайтов</span>
+              <span className="ml-auto text-sm text-gray-500">от 30 000 ₽</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <span>📢</span>
+              <span>Продвижение сайтов</span>
+              <span className="ml-auto text-sm text-gray-500">от 10 000 ₽</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <span>🔍</span>
+              <span>SEO-оптимизация</span>
+              <span className="ml-auto text-sm text-gray-500">от 10 000 ₽</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <span>💬</span>
+              <span>Разработка ВК-бота</span>
+              <span className="ml-auto text-sm text-gray-500">от 5 000 ₽</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <span>✈️</span>
+              <span>Разработка Telegram-бота</span>
+              <span className="ml-auto text-sm text-gray-500">от 5 000 ₽</span>
+            </li>
+          </ul>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/contacts"
+              className="inline-block px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Заказать
+            </Link>
+            <Link
+              href="/cases#it-uslugi"
+              className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
+            >
+              Показать кейсы →
+            </Link>
+          </div>
+        </div>
+
+        <div className="relative w-full aspect-square rounded-xl shadow-md overflow-hidden bg-white">
+          <Image
+            src="/images/home/it-uslugi.jpg"
+            alt="IT-услуги для бизнеса"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </div>
+      </section>
     </main>
   );
 }
