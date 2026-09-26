@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Тип одного кейса внутри категории
 type CaseItem = {
   id: number;
   title: string;
@@ -12,6 +13,7 @@ type CaseItem = {
   price: string | null;
 };
 
+// Тип категории — набор кейсов с общим заголовком и якорем
 type Category = {
   id: string;
   title: string;
@@ -108,11 +110,21 @@ const categories: Category[] = [
       },
     ],
   },
+  {
+    id: "it-uslugi",
+    title: "IT-услуги",
+    cases: [
+      // TODO: добавить кейсы — примеры сделанных сайтов и ботов
+    ],
+  },
 ];
 
 export default function Cases() {
+  // Объект вида { "pechati-i-shtampy": true, "poligrafiya": true, ... } —
+  // хранит, какая категория сейчас раскрыта
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>(
     () => {
+      // По умолчанию (пока нет данных об якоре) все категории открыты
       const initial: Record<string, boolean> = {};
       categories.forEach((category) => {
         initial[category.id] = true;
@@ -122,9 +134,11 @@ export default function Cases() {
   );
 
   useEffect(() => {
+    // window.location.hash доступен только в браузере, поэтому проверяем в useEffect
     const hash = window.location.hash.replace("#", "");
 
     if (hash) {
+      // Если в адресе есть якорь — раскрываем только соответствующую категорию
       const onlyOneOpen: Record<string, boolean> = {};
       categories.forEach((category) => {
         onlyOneOpen[category.id] = category.id === hash;
@@ -164,6 +178,7 @@ export default function Cases() {
               id={category.id}
               className="scroll-mt-24 bg-white rounded-xl shadow-md overflow-hidden"
             >
+              {/* Заголовок категории — кликабельный */}
               <button
                 onClick={() => toggleCategory(category.id)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left"
@@ -176,6 +191,7 @@ export default function Cases() {
                 </span>
               </button>
 
+              {/* Содержимое категории — рендерится только если она открыта */}
               {isOpen && (
                 <div className="px-6 pb-6">
                   {category.cases.length === 0 ? (
