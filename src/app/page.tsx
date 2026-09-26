@@ -33,7 +33,7 @@ export default function Home() {
           Наши услуги
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {/* Карточка 1 */}
           <Link
             href="/services#pechati-i-shtampy"
@@ -41,7 +41,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/home/shtampy.jpg"
+                src="/images/services/shtampy.jpg"
                 alt="Печати и штампы"
                 fill
                 className="object-cover"
@@ -49,16 +49,13 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
             </div>
 
-            <div className="flex gap-3 p-5">
-              <div className="text-2xl flex-shrink-0">🖋️</div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#1A3A6C]">
-                  Печати и штампы
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  Изготовление печатей и штампов любой сложности в короткие сроки.
-                </p>
-              </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                Печати и штампы
+              </h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Изготовление печатей и штампов любой сложности в короткие сроки.
+              </p>
             </div>
           </Link>
 
@@ -69,7 +66,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/home/poligrafiya.jpg"
+                src="/images/services/poligrafiya.jpg"
                 alt="Полиграфия"
                 fill
                 className="object-cover"
@@ -77,16 +74,13 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
             </div>
 
-            <div className="flex gap-3 p-5">
-              <div className="text-2xl flex-shrink-0">🖨️</div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#1A3A6C]">
-                  Полиграфия
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  Визитки, буклеты, бланки и другая печатная продукция для бизнеса.
-                </p>
-              </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                Полиграфия
+              </h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Визитки, буклеты, бланки и другая печатная продукция для бизнеса.
+              </p>
             </div>
           </Link>
 
@@ -97,7 +91,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/home/naruzhka.jpg"
+                src="/images/services/naruzhka.jpg"
                 alt="Наружная реклама"
                 fill
                 className="object-cover"
@@ -105,16 +99,13 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
             </div>
 
-            <div className="flex gap-3 p-5">
-              <div className="text-2xl flex-shrink-0">🪧</div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#1A3A6C]">
-                  Наружная реклама
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  Баннеры, таблички и вывески — заметно и качественно.
-                </p>
-              </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                Наружная реклама
+              </h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Баннеры, таблички и вывески — заметно и качественно.
+              </p>
             </div>
           </Link>
 
@@ -125,7 +116,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/home/suvenirka.jpg"
+                src="/images/services/suvenirka.jpg"
                 alt="Сувенирная продукция"
                 fill
                 className="object-cover"
@@ -133,16 +124,38 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
             </div>
 
-            <div className="flex gap-3 p-5">
-              <div className="text-2xl flex-shrink-0">🎁</div>
-              <div>
-                <h3 className="text-lg font-semibold text-[#1A3A6C]">
-                  Сувенирная продукция
-                </h3>
-                <p className="mt-2 text-sm text-gray-600">
-                  Кружки, брелоки и другая продукция с вашим логотипом.
-                </p>
-              </div>
+            <div className="p-5">
+              <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                Сувенирная продукция
+              </h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Кружки, брелоки и другая продукция с вашим логотипом.
+              </p>
+            </div>
+          </Link>
+
+          {/* Карточка 5 */}
+          <Link
+            href="/services#it-uslugi"
+            className="block bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
+          >
+            <div className="relative h-40 w-full">
+              <Image
+                src="/images/home/it-uslugi.jpg"
+                alt="IT-услуги для бизнеса"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent" />
+            </div>
+
+            <div className="p-5">
+              <h3 className="text-lg font-semibold text-[#1A3A6C]">
+                IT-услуги для бизнеса
+              </h3>
+              <p className="mt-2 text-sm text-gray-600">
+                Создание сайтов, SEO-продвижение, разработка ВК и Telegram-ботов.
+              </p>
             </div>
           </Link>
         </div>
@@ -156,6 +169,7 @@ export default function Home() {
           </h2>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Преимущество 1 */}
             <div className="text-center">
               <div className="text-4xl">⏳</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
@@ -166,6 +180,7 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Преимущество 2 */}
             <div className="text-center">
               <div className="text-4xl">🏭</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
@@ -176,6 +191,7 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Преимущество 3 */}
             <div className="text-center">
               <div className="text-4xl">⚡</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
@@ -186,6 +202,7 @@ export default function Home() {
               </p>
             </div>
 
+            {/* Преимущество 4 */}
             <div className="text-center">
               <div className="text-4xl">🤝</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
