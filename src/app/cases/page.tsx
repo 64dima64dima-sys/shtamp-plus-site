@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// Тип одного кейса внутри категории
 type CaseItem = {
   id: number;
   title: string;
@@ -13,7 +12,6 @@ type CaseItem = {
   price: string | null;
 };
 
-// Тип категории — набор кейсов с общим заголовком и якорем
 type Category = {
   id: string;
   title: string;
@@ -113,18 +111,13 @@ const categories: Category[] = [
   {
     id: "it-uslugi",
     title: "IT-услуги",
-    cases: [
-      // TODO: добавить кейсы — примеры сделанных сайтов и ботов
-    ],
+    cases: [],
   },
 ];
 
 export default function Cases() {
-  // Объект вида { "pechati-i-shtampy": true, "poligrafiya": true, ... } —
-  // хранит, какая категория сейчас раскрыта
   const [openCategories, setOpenCategories] = useState<Record<string, boolean>>(
     () => {
-      // По умолчанию (пока нет данных об якоре) все категории открыты
       const initial: Record<string, boolean> = {};
       categories.forEach((category) => {
         initial[category.id] = true;
@@ -134,11 +127,9 @@ export default function Cases() {
   );
 
   useEffect(() => {
-    // window.location.hash доступен только в браузере, поэтому проверяем в useEffect
     const hash = window.location.hash.replace("#", "");
 
     if (hash) {
-      // Если в адресе есть якорь — раскрываем только соответствующую категорию
       const onlyOneOpen: Record<string, boolean> = {};
       categories.forEach((category) => {
         onlyOneOpen[category.id] = category.id === hash;
@@ -171,6 +162,7 @@ export default function Cases() {
       <section className="px-6 py-16 max-w-6xl mx-auto space-y-6">
         {categories.map((category) => {
           const isOpen = openCategories[category.id];
+          const isItServices = category.id === "it-uslugi";
 
           return (
             <div
@@ -178,7 +170,6 @@ export default function Cases() {
               id={category.id}
               className="scroll-mt-24 bg-white rounded-xl shadow-md overflow-hidden"
             >
-              {/* Заголовок категории — кликабельный */}
               <button
                 onClick={() => toggleCategory(category.id)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left"
@@ -191,10 +182,54 @@ export default function Cases() {
                 </span>
               </button>
 
-              {/* Содержимое категории — рендерится только если она открыта */}
               {isOpen && (
                 <div className="px-6 pb-6">
-                  {category.cases.length === 0 ? (
+                  {isItServices ? (
+                    <ul className="space-y-3">
+                      <li>
+                        <a
+                          href="https://t.me/shtamp_plus_chat_bot"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-[#1A3A6C] font-semibold hover:text-[#D4AF37] transition"
+                        >
+                          <span>✈️</span>
+                          <span>Telegram-бот</span>
+                          <span className="ml-auto text-sm text-gray-500">
+                            @shtamp_plus_chat_bot
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://vk.ru/club241562222"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-[#1A3A6C] font-semibold hover:text-[#D4AF37] transition"
+                        >
+                          <span>💬</span>
+                          <span>ВК-бот</span>
+                          <span className="ml-auto text-sm text-gray-500">
+                            vk.ru/club241562222
+                          </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://rashtamp.ru"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-[#1A3A6C] font-semibold hover:text-[#D4AF37] transition"
+                        >
+                          <span>🌐</span>
+                          <span>Сайт</span>
+                          <span className="ml-auto text-sm text-gray-500">
+                            rashtamp.ru
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  ) : category.cases.length === 0 ? (
                     <p className="text-gray-500">
                       Скоро здесь появятся примеры работ.
                     </p>
@@ -213,20 +248,6 @@ export default function Cases() {
                               sizes="(max-width: 768px) 100vw, 50vw"
                               className="object-cover"
                             />
-                          </div>
-
-                          <div className="p-5">
-                            <h3 className="text-lg font-semibold text-[#1A3A6C]">
-                              {item.title}
-                            </h3>
-                            <p className="mt-2 text-sm text-gray-600">
-                              {item.description}
-                            </p>
-                            {item.price && (
-                              <p className="mt-2 text-sm font-semibold text-[#D4AF37]">
-                                {item.price}
-                              </p>
-                            )}
                           </div>
                         </div>
                       ))}
