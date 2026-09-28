@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Штамп Плюс — Рекламное агентство в Саратове",
+  description:
+    "Рекламное агентство Штамп Плюс в Саратове: печати и штампы, полиграфия, наружная реклама, сувенирная продукция. Собственное производство, быстрые сроки.",
+};
 
 export default function Home() {
   return (
@@ -41,7 +48,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/services/shtampy.jpg"
+                src="/images/home/shtampy.jpg"
                 alt="Печати и штампы"
                 fill
                 className="object-cover"
@@ -66,7 +73,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/services/poligrafiya.jpg"
+                src="/images/home/poligrafiya.jpg"
                 alt="Полиграфия"
                 fill
                 className="object-cover"
@@ -91,7 +98,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/services/naruzhka.jpg"
+                src="/images/home/naruzhka.jpg"
                 alt="Наружная реклама"
                 fill
                 className="object-cover"
@@ -116,7 +123,7 @@ export default function Home() {
           >
             <div className="relative h-40 w-full">
               <Image
-                src="/images/services/suvenirka.jpg"
+                src="/images/home/suvenirka.jpg"
                 alt="Сувенирная продукция"
                 fill
                 className="object-cover"
@@ -169,7 +176,6 @@ export default function Home() {
           </h2>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Преимущество 1 */}
             <div className="text-center">
               <div className="text-4xl">⏳</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
@@ -180,7 +186,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Преимущество 2 */}
             <div className="text-center">
               <div className="text-4xl">🏭</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
@@ -191,7 +196,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Преимущество 3 */}
             <div className="text-center">
               <div className="text-4xl">⚡</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
@@ -202,7 +206,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Преимущество 4 */}
             <div className="text-center">
               <div className="text-4xl">🤝</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">

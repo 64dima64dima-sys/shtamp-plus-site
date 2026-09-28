@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Услуги — Штамп Плюс | Рекламное агентство в Саратове",
+  description:
+    "Услуги рекламного агентства Штамп Плюс в Саратове: изготовление печатей, полиграфия, баннеры, таблички, сувенирка, IT-услуги. Цены, сроки, заказ онлайн.",
+};
 
 export default function Services() {
   return (
