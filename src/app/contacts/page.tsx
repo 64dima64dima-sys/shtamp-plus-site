@@ -135,7 +135,7 @@ export default function Contacts() {
           </a>
 
           <a
-            href="https://vk.ru/im/channels/-241566676"
+            href="https://vk.ru/im/channels/https://vk.ru/club241562222"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition text-gray-800 font-medium"
@@ -198,7 +198,7 @@ export default function Contacts() {
                 />
               </div>
               <a
-                href="https://vk.ru/im/channels/-241566676"
+                href="https://vk.ru/im/channels/https://vk.ru/club241562222"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 text-[#1A3A6C] font-semibold hover:text-[#D4AF37] transition"

@@ -132,7 +132,7 @@ export default function News() {
             </a>
 
             <a
-              href="https://vk.ru/im/channels/-241566676"
+              href="https://vk.ru/im/channels/https://vk.ru/club241562222"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
