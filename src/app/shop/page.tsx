@@ -70,6 +70,22 @@ export default function Shop() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [cartHintShown, setCartHintShown] = useState(false);
 
+  // Состояние формы заказа
+  const [formOpen, setFormOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [preferredTime, setPreferredTime] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [delivery, setDelivery] = useState("");
+  const [payment, setPayment] = useState("");
+  const [inn, setInn] = useState("");
+  const [comment, setComment] = useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
     try {
       const saved = localStorage.getItem(CART_STORAGE_KEY);
@@ -147,8 +163,58 @@ export default function Shop() {
     return item ? item.quantity : 0;
   }
 
-  function handleSendOrder() {
-    alert("Оформление заказа будет добавлено на следующем шаге");
+  function resetForm() {
+    setName("");
+    setPhone("");
+    setPreferredTime("");
+    setEmail("");
+    setAddress("");
+    setDelivery("");
+    setPayment("");
+    setInn("");
+    setComment("");
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          preferredTime,
+          email,
+          address,
+          delivery,
+          payment,
+          inn,
+          comment,
+          items: cart,
+          total: getTotalPrice(),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSuccess(true);
+        setCart([]);
+        resetForm();
+        setFormOpen(false);
+        setTimeout(() => setSuccess(false), 8000);
+      } else {
+        setError(data.error || "Произошла ошибка. Попробуйте позвонить нам.");
+      }
+    } catch {
+      setError("Произошла ошибка. Попробуйте позвонить нам по телефону.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -283,11 +349,19 @@ export default function Shop() {
             Корзина {cart.length > 0 && `(${getTotalItems()} товаров)`}
           </h2>
 
-          {cart.length === 0 ? (
+          {success && (
+            <div className="mt-4 bg-green-50 border-l-4 border-green-500 rounded-lg p-4">
+              <p className="text-green-700 font-medium">
+                ✅ Спасибо! Ваш заказ отправлен. Мы свяжемся с вами в указанное время.
+              </p>
+            </div>
+          )}
+
+          {cart.length === 0 && !success ? (
             <p className="mt-4 text-gray-500">
               Корзина пуста. Добавьте товары из каталога выше.
             </p>
-          ) : (
+          ) : cart.length > 0 ? (
             <>
               <div className="mt-6 space-y-4">
                 {cart.map((item) => (
@@ -358,14 +432,174 @@ export default function Shop() {
                 </p>
 
                 <button
-                  onClick={handleSendOrder}
+                  onClick={() => setFormOpen(!formOpen)}
                   className="px-8 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
                 >
-                  Отправить заказ
+                  {formOpen ? "Скрыть форму" : "Отправить заказ"}
                 </button>
               </div>
+
+              {/* ===== ФОРМА ЗАКАЗА ===== */}
+              {formOpen && (
+                <form
+                  onSubmit={handleSubmit}
+                  className="mt-8 pt-8 border-t border-gray-200 space-y-4"
+                >
+                  <h3 className="text-xl font-bold text-[#1A3A6C]">
+                    Оформление заказа
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Ваше имя <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                        placeholder="Иван Иванов"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Телефон <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        required
+                        placeholder="+7 (___) ___-__-__"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Удобное время для звонка <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={preferredTime}
+                      onChange={(e) => setPreferredTime(e.target.value)}
+                      required
+                      placeholder="Например: будни с 10:00 до 15:00"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Email <span className="text-gray-400">(по желанию)</span>
+                      </label>
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="mail@example.com"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Адрес доставки <span className="text-gray-400">(по желанию)</span>
+                      </label>
+                      <input
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        placeholder="г. Саратов, ул. ..."
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Способ получения <span className="text-gray-400">(по желанию)</span>
+                      </label>
+                      <select
+                        value={delivery}
+                        onChange={(e) => setDelivery(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition bg-white"
+                      >
+                        <option value="">Не выбрано</option>
+                        <option value="Самовывоз">Самовывоз</option>
+                        <option value="Доставка по Саратову">Доставка по Саратову</option>
+                        <option value="Доставка по России">Доставка по России</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Способ оплаты <span className="text-gray-400">(по желанию)</span>
+                      </label>
+                      <select
+                        value={payment}
+                        onChange={(e) => setPayment(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition bg-white"
+                      >
+                        <option value="">Не выбрано</option>
+                        <option value="Наличные">Наличные</option>
+                        <option value="Карта">Карта</option>
+                        <option value="Безнал (для юр. лиц)">Безнал (для юр. лиц)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      ИНН <span className="text-gray-400">(по желанию)</span>
+                    </label>
+                    <input
+                      type="text"
+                      value={inn}
+                      onChange={(e) => setInn(e.target.value)}
+                      placeholder="Для юр. лиц и ИП"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Комментарий <span className="text-gray-400">(по желанию)</span>
+                    </label>
+                    <textarea
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                      rows={3}
+                      placeholder="Что-то важное для нас?"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition resize-none"
+                    />
+                  </div>
+
+                  {error && (
+                    <p className="text-red-600 font-medium">{error}</p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-[#1A3A6C] text-white font-semibold py-3 rounded-lg hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {loading ? "Отправка..." : "Подтвердить заказ"}
+                  </button>
+
+                  <p className="text-xs text-gray-500 text-center">
+                    Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+                  </p>
+                </form>
+              )}
             </>
-          )}
+          ) : null}
         </div>
       </section>
     </main>

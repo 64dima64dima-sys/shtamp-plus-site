@@ -9,6 +9,7 @@ type OrderItem = {
 type OrderRequest = {
   name: string;
   phone: string;
+  preferredTime: string;
   email?: string;
   comment?: string;
   address?: string;
@@ -22,11 +23,23 @@ type OrderRequest = {
 export async function POST(request: NextRequest) {
   try {
     const body: OrderRequest = await request.json();
-    const { name, phone, email, comment, address, delivery, payment, inn, items, total } = body;
+    const {
+      name,
+      phone,
+      preferredTime,
+      email,
+      comment,
+      address,
+      delivery,
+      payment,
+      inn,
+      items,
+      total,
+    } = body;
 
-    if (!name || !phone || !items || items.length === 0 || !total) {
+    if (!name || !phone || !preferredTime || !items || items.length === 0 || !total) {
       return NextResponse.json(
-        { success: false, error: "Заполните имя, телефон и состав заказа" },
+        { success: false, error: "Заполните имя, телефон, удобное время и состав заказа" },
         { status: 400 }
       );
     }
@@ -45,6 +58,7 @@ export async function POST(request: NextRequest) {
 
     lines.push(`👤 Имя: ${name}`);
     lines.push(`📞 Телефон: ${phone}`);
+    lines.push(`🕐 Удобное время для звонка: ${preferredTime}`);
     if (email) lines.push(`✉️ Email: ${email}`);
     if (address) lines.push(`📍 Адрес: ${address}`);
     if (delivery) lines.push(`🚚 Способ получения: ${delivery}`);
