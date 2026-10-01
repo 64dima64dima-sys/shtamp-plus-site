@@ -34,11 +34,7 @@ const nextConfig: NextConfig = {
         destination: "/cases",
         permanent: true,
       },
-      {
-        source: "/shop/:path*",
-        destination: "/cases",
-        permanent: true,
-      },
+      // ⚠️ Правило /shop/:path* УДАЛЕНО — оно конфликтовало с новой страницей /shop
 
       // ===== 2. ТЕХНИЧЕСКИЕ РЕДИРЕКТЫ WORDPRESS (на главную) =====
       {

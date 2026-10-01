@@ -4,6 +4,7 @@ import Image from "next/image";
 const navLinks = [
   { href: "/", label: "Главная" },
   { href: "/services", label: "Услуги" },
+  { href: "/shop", label: "Магазин" },
   { href: "/cases", label: "Кейсы" },
   { href: "/news", label: "Новости" },
   { href: "/contacts", label: "Контакты" },
@@ -16,9 +17,9 @@ export default function Header() {
         <Image
           src="/images/logo.png"
           alt="Штамп Плюс"
-          width={48}
-          height={48}
-          className="w-12 h-12 object-contain rounded-lg bg-white p-1"
+          width={40}
+          height={40}
+          className="w-10 h-10 object-contain rounded-lg bg-white p-1"
         />
         <span>
           <span className="text-white">ШТАМП</span>{" "}

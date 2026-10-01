@@ -40,11 +40,20 @@ export default function Services() {
             <li>✔️ Печати организаций и ИП</li>
             <li>✔️ Именные и должностные штампы</li>
             <li>✔️ Факсимиле подписи</li>
-            <li>✔️ Готовность от 30 минут</li>
+            <li>✔️ Готовность от 1 часа</li>
+            <li>
+              <strong className="text-[#1A3A6C]">
+                ✔️ Всегда в наличии ассортимент оснасток
+              </strong>
+            </li>
           </ul>
 
           <p className="mt-4 text-sm text-gray-500">
             Стоимость: от 150 до 750 ₽ в зависимости от типа оснастки.
+          </p>
+
+          <p className="mt-3 text-sm text-gray-700">
+            <strong>При заказе требуется предоставить ксерокопию свидетельства ИНН.</strong>
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -231,7 +240,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ===== УСЛУГА 5: IT-УСЛУГИ ДЛЯ БИЗНЕСА ===== */}
+      {/* ===== УСЛУГА 5: IT-УСЛУГИ ===== */}
       <section
         id="it-uslugi"
         className="scroll-mt-24 px-6 py-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"

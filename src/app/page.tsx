@@ -26,12 +26,21 @@ export default function Home() {
           и сувенирная продукция — быстро, качественно, с собственным производством.
         </p>
 
-        <Link
-          href="/contacts"
-          className="inline-block mt-8 px-8 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
-        >
-          Связаться с нами
-        </Link>
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-center">
+          <Link
+            href="/contacts"
+            className="inline-block px-8 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
+          >
+            Связаться с нами
+          </Link>
+
+          <Link
+            href="/shop"
+            className="inline-block mt-4 md:mt-0 md:ml-4 px-8 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
+          >
+            Перейти в магазин
+          </Link>
+        </div>
       </section>
 
       {/* ===== НАШИ УСЛУГИ ===== */}
