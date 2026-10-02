@@ -20,7 +20,7 @@ type CartItem = {
 };
 
 const products: Product[] = [
-  // Печати и штампы — 7 штук (позиции 1 и 4 поменяны местами)
+  // Печати и штампы — 7 штук
   { id: 1, title: "Печать «Тродат» (автоматическая, модель 2)", price: 1500, image: "/images/shop/trodat-avtomat-2.jpg", category: "Печати и штампы" },
   { id: 2, title: "Печать GRM (автоматическая, модель 2)", price: "от 900 ₽", image: "/images/shop/grm-avtomat-2.jpg", category: "Печати и штампы" },
   { id: 3, title: "Печать «Врача» диаметр д.24-30мм", price: 1200, image: "/images/shop/trodat-avtomat-1.jpg", category: "Печати и штампы" },
@@ -63,6 +63,14 @@ const categoryOrder = [
   "IT-услуги",
 ];
 
+const categoryAnchors: Record<string, string> = {
+  "Печати и штампы": "pechati-i-shtampy",
+  "Полиграфия": "poligrafiya",
+  "Наружная реклама": "naruzhnaya-reklama",
+  "Сувенирная продукция": "suvenirnaya-produktsiya",
+  "IT-услуги": "it-uslugi",
+};
+
 const CART_STORAGE_KEY = "shtamp-cart";
 
 export default function Shop() {
@@ -70,7 +78,6 @@ export default function Shop() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [cartHintShown, setCartHintShown] = useState(false);
 
-  // Состояние формы заказа
   const [formOpen, setFormOpen] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -103,6 +110,20 @@ export default function Shop() {
       localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
     }
   }, [cart, isLoaded]);
+
+  // Прокрутка к нужной категории, если в URL есть якорь (например, /shop#poligrafiya)
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      // Небольшая задержка, чтобы DOM успел отрисоваться
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 200);
+    }
+  }, []);
 
   function addToCart(product: Product) {
     if (typeof product.price !== "number") return;
@@ -244,7 +265,11 @@ export default function Shop() {
           );
 
           return (
-            <div key={category}>
+            <div
+              key={category}
+              id={categoryAnchors[category]}
+              className="scroll-mt-24"
+            >
               <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C] mb-8">
                 {category}
               </h2>
@@ -439,7 +464,6 @@ export default function Shop() {
                 </button>
               </div>
 
-              {/* ===== ФОРМА ЗАКАЗА ===== */}
               {formOpen && (
                 <form
                   onSubmit={handleSubmit}

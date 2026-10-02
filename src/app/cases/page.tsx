@@ -23,89 +23,78 @@ const categories: Category[] = [
     id: "pechati-i-shtampy",
     title: "Печати и штампы",
     cases: [
-      // TODO: добавить кейсы
+      { id: 1, title: "Печать №1", description: "Изготовление печати", image: "/images/cases/shtamp_1.jpg", price: null },
+      { id: 2, title: "Печать №2", description: "Изготовление печати", image: "/images/cases/shtamp_2.jpg", price: null },
+      { id: 3, title: "Печать №3", description: "Изготовление печати", image: "/images/cases/shtamp_3.jpg", price: null },
+      { id: 4, title: "Печать №4", description: "Изготовление печати", image: "/images/cases/shtamp_4.jpg", price: null },
+      { id: 5, title: "Печать №5", description: "Изготовление печати", image: "/images/cases/shtamp_5.jpg", price: null },
+      { id: 6, title: "Печать №6", description: "Изготовление печати", image: "/images/cases/shtamp_6.jpg", price: null },
+      { id: 7, title: "Печать №7", description: "Изготовление печати", image: "/images/cases/shtamp_7.jpg", price: null },
+      { id: 8, title: "Печать №8", description: "Изготовление печати", image: "/images/cases/shtamp_8.jpg", price: null },
     ],
   },
   {
     id: "poligrafiya",
     title: "Полиграфия",
     cases: [
-      {
-        id: 1,
-        title: "Визитки",
-        description:
-          "Изготовление визиток с двусторонней печатью и ламинацией для сотрудников логистической компании.",
-        image: "/images/cases/business-cards.jpg",
-        price: null,
-      },
+      { id: 9, title: "Визитки", description: "Изготовление визиток с двусторонней печатью и ламинацией", image: "/images/cases/business-cards.jpg", price: null },
+      { id: 10, title: "Полиграфия №1", description: "Печатная продукция", image: "/images/cases/poligrafiy_1.jpg", price: null },
+      { id: 11, title: "Полиграфия №2", description: "Печатная продукция", image: "/images/cases/poligrafiy_2.jpg", price: null },
+      { id: 12, title: "Полиграфия №3", description: "Печатная продукция", image: "/images/cases/poligrafiy_3.jpg", price: null },
+      { id: 13, title: "Полиграфия №4", description: "Печатная продукция", image: "/images/cases/poligrafiy_4.jpg", price: null },
+      { id: 14, title: "Полиграфия №5", description: "Печатная продукция", image: "/images/cases/poligrafiy_5.jpg", price: null },
+      { id: 15, title: "Полиграфия №6", description: "Печатная продукция", image: "/images/cases/poligrafiy_6.jpg", price: null },
     ],
   },
   {
     id: "naruzhnaya-reklama",
     title: "Наружная реклама",
     cases: [
-      {
-        id: 2,
-        title: "Печать баннеров",
-        description:
-          "Изготовление наружных баннеров любого размера с проклейкой кармана и установкой люверсов.",
-        image: "/images/cases/banner.jpg",
-        price: null,
-      },
-      {
-        id: 3,
-        title: "Информационные стенды",
-        description:
-          "Производство стендов с алюминиевым профилем и прозрачными карманами для документов и объявлений.",
-        image: "/images/cases/stand.jpg",
-        price: null,
-      },
-      {
-        id: 4,
-        title: "Наружная реклама (PRIVAT)",
-        description:
-          "Печать и размещение рекламных щитов. Кампания для men's club PRIVAT.",
-        image: "/images/cases/billboard-1.jpg",
-        price: null,
-      },
-      {
-        id: 5,
-        title: "Наружная реклама (KFC)",
-        description:
-          "Федеральная рекламная кампания KFC. Производство и монтаж билбордов в Саратове.",
-        image: "/images/cases/billboard-2.jpg",
-        price: null,
-      },
-      {
-        id: 6,
-        title: "Дизайн билборда (Семена)",
-        description:
-          "Разработка макета и печать билборда для весенней распродажи семян.",
-        image: "/images/cases/billboard-3.jpg",
-        price: null,
-      },
+      { id: 16, title: "Наружная реклама (PRIVAT)", description: "Печать и размещение рекламных щитов", image: "/images/cases/billboard-1.jpg", price: null },
+      { id: 17, title: "Наружная реклама (KFC)", description: "Производство и монтаж билбордов", image: "/images/cases/billboard-2.jpg", price: null },
+      { id: 18, title: "Дизайн билборда", description: "Разработка макета и печать билборда", image: "/images/cases/billboard-3.jpg", price: null },
+      { id: 19, title: "Информационный стенд №1", description: "Производство стендов", image: "/images/cases/stand_1.jpg", price: null },
+      { id: 20, title: "Информационный стенд №2", description: "Производство стендов", image: "/images/cases/stand_2.jpg", price: null },
+      { id: 21, title: "Информационный стенд №3", description: "Производство стендов", image: "/images/cases/stand_3.jpg", price: null },
+      { id: 22, title: "Информационный стенд №4", description: "Производство стендов", image: "/images/cases/stand_4.jpg", price: null },
+      { id: 23, title: "Информационный стенд №5", description: "Производство стендов", image: "/images/cases/stand_5.jpg", price: null },
+      { id: 24, title: "Информационный стенд №6", description: "Производство стендов", image: "/images/cases/stand_6.jpg", price: null },
+      { id: 25, title: "Информационный стенд №7", description: "Производство стендов", image: "/images/cases/stand_7.jpg", price: null },
+      { id: 26, title: "Информационный стенд №8", description: "Производство стендов", image: "/images/cases/stand_8.jpg", price: null },
+      { id: 27, title: "Информационный стенд №9", description: "Производство стендов", image: "/images/cases/stand_9.jpg", price: null },
     ],
   },
   {
     id: "suvenirnaya-produktsiya",
     title: "Сувенирная продукция",
     cases: [
-      {
-        id: 7,
-        title: "Сувенирные кружки",
-        description:
-          "Полноцветная сублимационная печать на кружках. Отличный вариант для корпоративных подарков и промо-акций.",
-        image: "/images/cases/mugs.jpg",
-        price: null,
-      },
-      {
-        id: 8,
-        title: "Корпоративный мерч",
-        description:
-          "Комплексное брендирование: футболки, сумки, блокноты, ручки и другая продукция с вашим логотипом.",
-        image: "/images/cases/merch.jpg",
-        price: null,
-      },
+      { id: 28, title: "Сувенирные кружки", description: "Полноцветная сублимационная печать на кружках", image: "/images/cases/mugs.jpg", price: null },
+      { id: 29, title: "Корпоративный мерч", description: "Комплексное брендирование", image: "/images/cases/merch.jpg", price: null },
+      { id: 30, title: "Сувенирка №1", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_1.jpg", price: null },
+      { id: 31, title: "Сувенирка №2", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_2.jpg", price: null },
+      { id: 32, title: "Сувенирка №3", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_3.jpg", price: null },
+      { id: 33, title: "Сувенирка №4", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_4.jpg", price: null },
+      { id: 34, title: "Сувенирка №5", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_5.jpg", price: null },
+      { id: 35, title: "Сувенирка №6", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_6.jpg", price: null },
+      { id: 36, title: "Сувенирка №7", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_7.jpg", price: null },
+      { id: 37, title: "Сувенирка №8", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_8.jpg", price: null },
+      { id: 38, title: "Сувенирка №9", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_9.jpg", price: null },
+      { id: 39, title: "Сувенирка №10", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_10.jpg", price: null },
+      { id: 40, title: "Сувенирка №11", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_11.jpg", price: null },
+      { id: 41, title: "Сувенирка №12", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_12.jpg", price: null },
+      { id: 42, title: "Сувенирка №13", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_13.jpg", price: null },
+      { id: 43, title: "Сувенирка №14", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_14.jpg", price: null },
+      { id: 44, title: "Сувенирка №15", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_15.jpg", price: null },
+      { id: 45, title: "Сувенирка №16", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_16.jpg", price: null },
+      { id: 46, title: "Сувенирка №17", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_17.jpg", price: null },
+      { id: 47, title: "Сувенирка №18", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_18.jpg", price: null },
+      { id: 48, title: "Сувенирка №19", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_19.jpg", price: null },
+      { id: 49, title: "Сувенирка №20", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_20.jpg", price: null },
+      { id: 50, title: "Сувенирка №21", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_21.jpg", price: null },
+      { id: 51, title: "Сувенирка №22", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_22.jpg", price: null },
+      { id: 52, title: "Сувенирка №23", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_23.jpg", price: null },
+      { id: 53, title: "Сувенирка №24", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_24.jpg", price: null },
+      { id: 54, title: "Сувенирка №25", description: "Сувенирная продукция с логотипом", image: "/images/cases/Suvenirka_25.jpg", price: null },
     ],
   },
   {
@@ -147,7 +136,6 @@ export default function Cases() {
 
   return (
     <main className="bg-gray-50">
-      {/* ===== HERO-СЕКЦИЯ ===== */}
       <section className="bg-[#1A3A6C] text-white px-6 py-16 text-center">
         <h1 className="text-3xl md:text-5xl font-bold text-[#D4AF37]">
           Наши работы
@@ -158,7 +146,6 @@ export default function Cases() {
         </p>
       </section>
 
-      {/* ===== КАТЕГОРИИ КЕЙСОВ ===== */}
       <section className="px-6 py-16 max-w-6xl mx-auto space-y-6">
         {categories.map((category) => {
           const isOpen = openCategories[category.id];
@@ -234,18 +221,18 @@ export default function Cases() {
                       Скоро здесь появятся примеры работ.
                     </p>
                   ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                       {category.cases.map((item) => (
                         <div
                           key={item.id}
                           className="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition"
                         >
-                          <div className="relative w-full aspect-[4/3]">
+                          <div className="relative w-full aspect-square">
                             <Image
                               src={item.image}
                               alt={item.title}
                               fill
-                              sizes="(max-width: 768px) 100vw, 50vw"
+                              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                               className="object-cover"
                             />
                           </div>
@@ -260,7 +247,6 @@ export default function Cases() {
         })}
       </section>
 
-      {/* ===== ПРИЗЫВ К ДЕЙСТВИЮ ===== */}
       <section className="bg-white px-6 py-16 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1A3A6C]">
           Хотите так же?

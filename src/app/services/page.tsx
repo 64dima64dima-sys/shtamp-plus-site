@@ -64,6 +64,12 @@ export default function Services() {
               Заказать
             </Link>
             <Link
+              href="/shop#pechati-i-shtampy"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Посмотреть цены
+            </Link>
+            <Link
               href="/cases#pechati-i-shtampy"
               className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
             >
@@ -125,6 +131,12 @@ export default function Services() {
                 Заказать
               </Link>
               <Link
+                href="/shop#poligrafiya"
+                className="inline-block px-6 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
+              >
+                Посмотреть цены
+              </Link>
+              <Link
                 href="/cases#poligrafiya"
                 className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
               >
@@ -167,6 +179,12 @@ export default function Services() {
               className="inline-block px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
             >
               Заказать
+            </Link>
+            <Link
+              href="/shop#naruzhnaya-reklama"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Посмотреть цены
             </Link>
             <Link
               href="/cases#naruzhnaya-reklama"
@@ -230,6 +248,12 @@ export default function Services() {
                 Заказать
               </Link>
               <Link
+                href="/shop#suvenirnaya-produktsiya"
+                className="inline-block px-6 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
+              >
+                Посмотреть цены
+              </Link>
+              <Link
                 href="/cases#suvenirnaya-produktsiya"
                 className="inline-block px-6 py-3 bg-white text-[#1A3A6C] font-semibold rounded-lg border-2 border-[#1A3A6C] hover:bg-[#1A3A6C] hover:text-white transition"
               >
@@ -288,6 +312,12 @@ export default function Services() {
               className="inline-block px-6 py-3 bg-[#1A3A6C] text-white font-semibold rounded-lg hover:opacity-90 transition"
             >
               Заказать
+            </Link>
+            <Link
+              href="/shop#it-uslugi"
+              className="inline-block px-6 py-3 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition"
+            >
+              Посмотреть цены
             </Link>
             <Link
               href="/cases#it-uslugi"
