@@ -42,7 +42,7 @@ export default function Footer() {
           </p>
           <p>
             <a
-              href="https://t.me/shtamp_plus_chat_bot"
+              href="https://t.me/shtamp_plus_64_bot"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition"
