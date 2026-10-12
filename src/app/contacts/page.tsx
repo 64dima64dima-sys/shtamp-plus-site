@@ -7,6 +7,7 @@ export default function Contacts() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [comment, setComment] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot — всегда пустое
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
@@ -21,7 +22,7 @@ export default function Contacts() {
       const response = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, contact, comment }),
+        body: JSON.stringify({ name, contact, comment, website }),
       });
 
       const data = await response.json();
@@ -31,6 +32,7 @@ export default function Contacts() {
         setName("");
         setContact("");
         setComment("");
+        setWebsite("");
         setTimeout(() => setSuccess(false), 5000);
       } else {
         setError(true);
@@ -266,6 +268,29 @@ export default function Contacts() {
               rows={4}
               placeholder="Опишите, что вам нужно: вид продукции, тираж, сроки..."
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1A3A6C] focus:border-transparent outline-none transition resize-none"
+            />
+          </div>
+
+          {/* Honeypot — скрытое поле. Люди его не видят, боты заполняют. */}
+          <div
+            style={{
+              position: "absolute",
+              left: "-9999px",
+              width: "1px",
+              height: "1px",
+              overflow: "hidden",
+            }}
+            aria-hidden="true"
+          >
+            <label htmlFor="website">Не заполняйте это поле</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
             />
           </div>
 
