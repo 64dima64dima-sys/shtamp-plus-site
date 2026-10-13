@@ -36,7 +36,43 @@ const nextConfig: NextConfig = {
       },
       // ⚠️ Правило /shop/:path* УДАЛЕНО — оно конфликтовало с новой страницей /shop
 
-      // ===== 2. ТЕХНИЧЕСКИЕ РЕДИРЕКТЫ WORDPRESS (на главную) =====
+      // ===== 2. РЕДИРЕКТЫ ДЛЯ СТАРЫХ URL (кириллица, теги, старые страницы) =====
+      // Старая главная WordPress — кириллица в percent-encoded виде.
+      // Next.js не матчит кириллицу в исходном виде, поэтому пишем так.
+      {
+        source: "/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F/",
+        destination: "/",
+        permanent: true,
+      },
+      // Старые теги WordPress — все на /services
+      {
+        source: "/tag",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/tag/:path*",
+        destination: "/services",
+        permanent: true,
+      },
+      // Старая страница заказа ПВХ-меню
+      {
+        source: "/zakaz-pvh-menu",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/zakaz-pvh-menu/",
+        destination: "/services",
+        permanent: true,
+      },
+
+      // ===== 3. ТЕХНИЧЕСКИЕ РЕДИРЕКТЫ WORDPRESS (на главную) =====
       {
         source: "/wp-admin",
         destination: "/",
