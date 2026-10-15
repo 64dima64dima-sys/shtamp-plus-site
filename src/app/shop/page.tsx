@@ -28,6 +28,7 @@ type FlyItem = {
 };
 
 const products: Product[] = [
+  // ===== ПЕЧАТИ И ШТАМПЫ =====
   { id: 1, title: "Печать «Тродат» (автоматическая, модель 2)", price: 1500, image: "/images/shop/trodat-avtomat-2.jpg", category: "Печати и штампы" },
   { id: 2, title: "Печать GRM (автоматическая, модель 2)", price: "от 900 ₽", cartPrice: 900, image: "/images/shop/grm-avtomat-2.jpg", category: "Печати и штампы" },
   { id: 3, title: "Печать «Врача» диаметр д.24-30мм", price: 1200, image: "/images/shop/trodat-avtomat-1.jpg", category: "Печати и штампы" },
@@ -35,18 +36,27 @@ const products: Product[] = [
   { id: 5, title: "Печать ручная", price: 1200, image: "/images/shop/ruchnaya.jpg", category: "Печати и штампы" },
   { id: 6, title: "Полуавтоматическая печать", price: 1200, image: "/images/shop/poluavtomaticheskay.jpg", category: "Печати и штампы" },
   { id: 7, title: "Печать «Тродат» (карманная)", price: 1500, image: "/images/shop/trodat-karmannaya.jpg", category: "Печати и штампы" },
-  { id: 8, title: "Визитки (от 100 шт)", price: 700, image: "/images/shop/vizitki.jpg", category: "Полиграфия" },
-  { id: 9, title: "Бланки документов", price: "Расчитывается индивидуально", image: "/images/shop/blanki.jpg", category: "Полиграфия" },
-  { id: 10, title: "Листовки и флаеры", price: "Расчитывается индивидуально", image: "/images/shop/listovki.jpg", category: "Полиграфия" },
-  { id: 11, title: "Баннеры", price: "Расчитывается индивидуально на кв/м", image: "/images/shop/banner.jpg", category: "Наружная реклама" },
-  { id: 12, title: "Таблички из пластика", price: "Расчитывается индивидуально на кв/м", image: "/images/shop/tablichki-plastik.jpg", category: "Наружная реклама" },
-  { id: 13, title: "Таблички из композита", price: "Расчитывается индивидуально на кв/м", image: "/images/shop/tablichki-kompozit.jpg", category: "Наружная реклама" },
+
+  // ===== ПОЛИГРАФИЯ =====
+  { id: 8, title: "Визитки (100 шт)", price: 600, image: "/images/shop/vizitki.jpg", category: "Полиграфия" },
+  { id: 25, title: "Визитки (1000 шт)", price: 5000, image: "/images/shop/vizitki.jpg", category: "Полиграфия" },
+  { id: 9, title: "Бланки документов", price: "Рассчитывается индивидуально", image: "/images/shop/blanki.jpg", category: "Полиграфия" },
+  { id: 10, title: "Листовки и флаеры", price: "Рассчитывается индивидуально", image: "/images/shop/listovki.jpg", category: "Полиграфия" },
+
+  // ===== НАРУЖНАЯ РЕКЛАМА =====
+  { id: 11, title: "Баннеры", price: "от 650 ₽/м²", cartPrice: 650, image: "/images/shop/banner.jpg", category: "Наружная реклама" },
+  { id: 12, title: "Таблички из пластика", price: "270–540 ₽", cartPrice: 270, image: "/images/shop/tablichki-plastik.jpg", category: "Наружная реклама" },
+  { id: 13, title: "Таблички из композита", price: "от 800 ₽", cartPrice: 800, image: "/images/shop/tablichki-kompozit.jpg", category: "Наружная реклама" },
   { id: 14, title: "Информационные стенды", price: "от 4500 ₽", cartPrice: 4500, image: "/images/shop/stendy.jpg", category: "Наружная реклама" },
-  { id: 15, title: "Кружки с логотипом", price: "от 250 ₽", cartPrice: 250, image: "/images/shop/kruzhki.jpg", category: "Сувенирная продукция" },
+
+  // ===== СУВЕНИРНАЯ ПРОДУКЦИЯ =====
+  { id: 15, title: "Кружки с логотипом", price: "от 300 ₽", cartPrice: 300, image: "/images/shop/kruzhki.jpg", category: "Сувенирная продукция" },
   { id: 16, title: "Футболки с печатью", price: 1700, image: "/images/shop/futbolka.jpg", category: "Сувенирная продукция", note: "Принт на футболке заказчика — 700 ₽" },
   { id: 17, title: "Брелоки с логотипом", price: 99, image: "/images/shop/breloki.jpg", category: "Сувенирная продукция" },
   { id: 18, title: "Ручки с логотипом", price: 49, image: "/images/shop/ruchki.jpg", category: "Сувенирная продукция" },
   { id: 19, title: "Пакеты с печатью", price: "от 350 ₽", cartPrice: 350, image: "/images/shop/pakety.jpg", category: "Сувенирная продукция" },
+
+  // ===== IT-УСЛУГИ =====
   { id: 20, title: "Создание сайтов", price: 30000, image: "/images/shop/saity.jpg", category: "IT-услуги" },
   { id: 21, title: "Продвижение сайтов", price: 10000, image: "/images/shop/produizhenie.jpg", category: "IT-услуги" },
   { id: 22, title: "SEO-оптимизация", price: 10000, image: "/images/shop/seo.jpg", category: "IT-услуги" },

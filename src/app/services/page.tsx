@@ -49,7 +49,8 @@ export default function Services() {
           </ul>
 
           <p className="mt-4 text-sm text-gray-500">
-            Стоимость: от 150 до 750 ₽ в зависимости от типа оснастки.
+            Печати (автоматическая оснастка) — 1500 ₽, штампы — 1000–2700 ₽,
+            факсимиле — 500–700 ₽, печати по оттиску — 550–750 ₽.
           </p>
 
           <p className="mt-3 text-sm text-gray-700">
@@ -120,7 +121,7 @@ export default function Services() {
             </ul>
 
             <p className="mt-4 text-sm text-gray-500">
-              Например, визитки (1000 шт) — от 800 до 1200 ₽.
+              Визитки: 100 шт — 600 ₽, 1000 шт — 5000 ₽.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -170,7 +171,8 @@ export default function Services() {
           </ul>
 
           <p className="mt-4 text-sm text-gray-500">
-            Баннеры — от 270 ₽/м², таблички — от 270 до 800 ₽.
+            Баннеры — от 650 ₽/м², таблички из пластика — 270–540 ₽,
+            из композита — от 800 ₽.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

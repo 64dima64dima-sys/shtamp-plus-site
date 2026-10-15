@@ -118,7 +118,7 @@ export default function Contacts() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
-            href="#"
+            href="https://wa.me/79033824326"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition text-gray-800 font-medium"
@@ -142,6 +142,26 @@ export default function Contacts() {
           </a>
 
           <a
+            href="https://t.me/shtamp_plus_64_bot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition text-gray-800 font-medium"
+          >
+            <span className="w-6 h-6 flex items-center justify-center text-xl">🤖</span>
+            Telegram-бот
+          </a>
+
+          <a
+            href="https://max.ru/u/f9LHodD0cOLkJcRuYYm5N1TtpxRk-AGDt4TAisYIeR3SwN8yVlDf9MxQ8zE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition text-gray-800 font-medium"
+          >
+            <span className="w-6 h-6 flex items-center justify-center font-bold text-purple-600">M</span>
+            MAX
+          </a>
+
+          <a
             href="https://vk.ru/club241562222"
             target="_blank"
             rel="noopener noreferrer"
@@ -151,16 +171,6 @@ export default function Contacts() {
               <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.586-1.496c.596-.19 1.365 1.265 2.18 1.833.616.429 1.084.335 1.084.335l2.178-.03s1.139-.071.599-.966c-.044-.073-.315-.664-1.62-1.876-1.365-1.267-1.182-1.062.462-3.256.999-1.329 1.398-2.14 1.273-2.488-.12-.33-.86-.243-.86-.243l-2.45.015s-.182-.025-.316.056c-.132.08-.216.265-.216.265s-.39 1.037-.909 1.918c-1.096 1.86-1.533 1.958-1.712 1.842-.419-.27-.314-1.084-.314-1.663 0-1.809.274-2.563-.534-2.758-.268-.065-.465-.108-1.15-.115-.88-.009-1.625.003-2.047.21-.281.137-.498.443-.366.46.163.022.533.1.729.367.253.345.244 1.12.244 1.12s.145 2.128-.339 2.392c-.332.181-.788-.188-1.766-1.876-.501-.865-.88-1.822-.88-1.822s-.073-.178-.203-.274c-.158-.116-.379-.153-.379-.153l-2.328.015s-.35.01-.478.162c-.114.135-.009.414-.009.414s1.823 4.265 3.888 6.413c1.893 1.968 4.043 1.838 4.043 1.838h.974z"/>
             </svg>
             ВКонтакте
-          </a>
-
-          <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-3 bg-white rounded-lg shadow-md hover:shadow-lg transition text-gray-800 font-medium"
-          >
-            <span className="w-6 h-6 flex items-center justify-center font-bold text-purple-600">M</span>
-            MAX
           </a>
         </div>
       </section>

@@ -52,6 +52,26 @@ export default function Footer() {
           </p>
           <p>
             <a
+              href="https://wa.me/79033824326"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              WhatsApp
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://max.ru/u/f9LHodD0cOLkJcRuYYm5N1TtpxRk-AGDt4TAisYIeR3SwN8yVlDf9MxQ8zE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition"
+            >
+              MAX
+            </a>
+          </p>
+          <p>
+            <a
               href="https://vk.ru/club241562222"
               target="_blank"
               rel="noopener noreferrer"
