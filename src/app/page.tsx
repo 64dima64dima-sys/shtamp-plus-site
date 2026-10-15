@@ -188,10 +188,10 @@ export default function Home() {
             <div className="text-center">
               <div className="text-4xl">⏳</div>
               <h3 className="mt-3 font-semibold text-[#1A3A6C]">
-                Опыт более 10 лет
+                Опыт более 20 лет
               </h3>
               <p className="mt-2 text-sm text-gray-600">
-                Работаем с бизнесом Саратова и области уже больше десяти лет.
+                Работаем с бизнесом Саратова и области уже больше двадцати лет.
               </p>
             </div>
 
@@ -234,12 +234,56 @@ export default function Home() {
           Свяжитесь с нами
         </h2>
 
-        <p className="mt-4 text-gray-700">
-          г. Саратов, ул. имени Н.Г. Чернышевского, 100
-        </p>
-        <p className="mt-1 text-gray-700">
-          Телефон: +7 (845) 34-55-83
-        </p>
+        <div className="mt-6 text-gray-700 space-y-2">
+          <p>
+            📍 г. Саратов, ул. имени Н.Г. Чернышевского, 100, 2 этаж, офис 222
+          </p>
+          <p>
+            📞{" "}
+            <a href="tel:+78453455883" className="hover:text-[#1A3A6C] font-medium">
+              +7 (845) 34-55-83
+            </a>
+            {" · "}
+            <a href="tel:+79033824326" className="hover:text-[#1A3A6C] font-medium">
+              +7 (903) 382-43-26
+            </a>
+          </p>
+          <p>
+            ✉️{" "}
+            <a href="mailto:info@rashtamp.ru" className="hover:text-[#1A3A6C] font-medium">
+              info@rashtamp.ru
+            </a>
+          </p>
+          <p>🕒 Пн–Пт: 9:00–17:00</p>
+        </div>
+
+        {/* Соцсети */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="https://t.me/shtamp_plus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition text-gray-800 text-sm font-medium"
+          >
+            📢 Telegram-канал
+          </a>
+          <a
+            href="https://vk.ru/club241562222"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition text-gray-800 text-sm font-medium"
+          >
+            💬 ВКонтакте
+          </a>
+          <a
+            href="https://t.me/shtamp_plus_64_bot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition text-gray-800 text-sm font-medium"
+          >
+            🤖 Telegram-бот
+          </a>
+        </div>
 
         <Link
           href="/contacts"
