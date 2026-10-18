@@ -4,16 +4,29 @@ import { getAllPosts } from "@/lib/posts";
 const baseUrl = "https://rashtamp.ru";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Получаем все статьи из блога
   const posts = getAllPosts();
 
-  // Создаем записи для карты сайта для каждой статьи
-  const postEntries = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  const postEntries = posts.map((post) => {
+    // Безопасная проверка даты: если она битая, ставим сегодняшнюю
+    let validDate = new Date();
+    try {
+      if (post.date) {
+        const parsedDate = new Date(post.date);
+        if (!isNaN(parsedDate.getTime())) {
+          validDate = parsedDate;
+        }
+      }
+    } catch (e) {
+      // Ничего не делаем, остается текущая дата
+    }
+
+    return {
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: validDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    };
+  });
 
   return [
     {
@@ -58,6 +71,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
-    ...postEntries, // Добавляем все статьи
+    ...postEntries,
   ];
 }
