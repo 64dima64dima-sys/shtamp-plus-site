@@ -1,0 +1,42 @@
+import Link from "next/link";
+
+export default function CtaBox({ 
+  title = "Нужна помощь с заказом?", 
+  text = "Оставьте заявку в нашем Telegram-боте, и мы рассчитаем стоимость за 15 минут.", 
+  buttonText = "🤖 Перейти в бот", 
+  href = "https://t.me/shtamp_plus_64_bot" 
+}) {
+  // Выносим кнопку в отдельную переменную до начала return.
+  // Это спасает сборщик Turbopack от ошибки.
+  let ButtonElement;
+
+  if (href.startsWith("http")) {
+    ButtonElement = (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-6 py-2.5 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition text-sm"
+      >
+        {buttonText}
+      </a>
+    );
+  } else {
+    ButtonElement = (
+      <Link
+        href={href}
+        className="inline-block px-6 py-2.5 bg-[#D4AF37] text-[#1A3A6C] font-semibold rounded-lg hover:opacity-90 transition text-sm"
+      >
+        {buttonText}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="my-10 p-6 bg-[#1A3A6C]/5 rounded-xl border border-[#1A3A6C]/20 text-center not-prose">
+      <h3 className="text-xl font-bold text-[#1A3A6C] mb-2">{title}</h3>
+      <p className="text-gray-600 mb-4 text-sm">{text}</p>
+      {ButtonElement}
+    </div>
+  );
+}
