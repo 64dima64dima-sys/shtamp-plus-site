@@ -1,8 +1,20 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/posts";
 
 const baseUrl = "https://rashtamp.ru";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Получаем все статьи из блога
+  const posts = getAllPosts();
+
+  // Создаем записи для карты сайта для каждой статьи
+  const postEntries = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -29,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/news`,
       lastModified: new Date(),
       changeFrequency: "daily",
@@ -40,5 +58,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    ...postEntries, // Добавляем все статьи
   ];
 }

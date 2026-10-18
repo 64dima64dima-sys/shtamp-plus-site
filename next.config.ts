@@ -10,16 +10,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog",
-        destination: "/news",
-        permanent: true,
-      },
-      {
-        source: "/blog/:path*",
-        destination: "/news",
-        permanent: true,
-      },
-      {
         source: "/category/na-zakaz",
         destination: "/services",
         permanent: true,
@@ -34,11 +24,8 @@ const nextConfig: NextConfig = {
         destination: "/cases",
         permanent: true,
       },
-      // ⚠️ Правило /shop/:path* УДАЛЕНО — оно конфликтовало с новой страницей /shop
 
       // ===== 2. РЕДИРЕКТЫ ДЛЯ СТАРЫХ URL (кириллица, теги, старые страницы) =====
-      // Старая главная WordPress — кириллица в percent-encoded виде.
-      // Next.js не матчит кириллицу в исходном виде, поэтому пишем так.
       {
         source: "/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F",
         destination: "/",
@@ -49,7 +36,6 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
-      // Старые теги WordPress — все на /services
       {
         source: "/tag",
         destination: "/services",
@@ -60,7 +46,6 @@ const nextConfig: NextConfig = {
         destination: "/services",
         permanent: true,
       },
-      // Старая страница заказа ПВХ-меню
       {
         source: "/zakaz-pvh-menu",
         destination: "/services",
@@ -98,6 +83,9 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      
+      // УДАЛЕНО: редиректы для /blog и /blog/:path*
+      // Теперь у нас здесь настоящий блог.
     ];
   },
 };
