@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import CtaBox from "@/components/CtaBox";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 
 // Эта функция говорит Next.js: "Сделай статические страницы для всех наших статей"
@@ -76,7 +77,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* ===== КОНТЕНТ СТАТЬИ (MDX) ===== */}
       <section className="px-6 py-16 max-w-3xl mx-auto">
         <article className="prose prose-lg prose-blue max-w-none prose-headings:text-[#1A3A6C] prose-a:text-[#D4AF37]">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} components={{ CtaBox }} />
         </article>
 
         {/* ===== CTA В КОНЦЕ СТАТЬИ ===== */}
