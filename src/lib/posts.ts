@@ -67,3 +67,25 @@ export function getPostBySlug(slug: string): Post | null {
     return null; // Если файл не найден
   }
 }
+
+// Функция для получения похожих статей (для блока "Читайте также")
+export function getRelatedPosts(currentSlug: string, category: string, limit: number = 3): PostMeta[] {
+  const allPosts = getAllPosts();
+  
+  // Сначала ищем статьи в той же категории
+  const sameCategory = allPosts.filter(
+    (post) => post.slug !== currentSlug && post.category === category
+  );
+  
+  // Если нашли 3 и больше — отдаем их
+  if (sameCategory.length >= limit) {
+    return sameCategory.slice(0, limit);
+  }
+  
+  // Если в этой категории мало статей, добираем из других
+  const otherPosts = allPosts.filter(
+    (post) => post.slug !== currentSlug && post.category !== category
+  );
+  
+  return [...sameCategory, ...otherPosts].slice(0, limit);
+}
